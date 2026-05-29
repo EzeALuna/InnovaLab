@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa Accesible - CFP N.o 7</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Plano Interactivo CFP N.o 7</h1>
+        <p><strong>Instrucciones:</strong> Seleccioná un espacio para ver su información. Seleccioná un segundo espacio para trazar el recorrido entre ambos.</p>
+    </header>
+
+    <main class="contenedor-principal">
+        <section class="seccion-mapa" aria-labelledby="titulo-mapa">
+            <h2 id="titulo-mapa" class="sr-only">Plano del edificio</h2>
+            
+            <svg viewBox="0 0 500 300" aria-label="Mapa interactivo del CFP 7" role="application">
+                <rect id="aula-1" class="espacio-interactivo" 
+                      x="50" y="50" width="150" height="100" 
+                      role="button" tabindex="0" aria-pressed="false"
+                      aria-label="Aula 1: Taller de Informática" />
+                <text x="75" y="105" pointer-events="none">Aula 1</text>
+
+                <rect id="bano-acc" class="espacio-interactivo" 
+                      x="300" y="50" width="100" height="100" 
+                      role="button" tabindex="0" aria-pressed="false"
+                      aria-label="Baño Accesible Universal" />
+                <text x="310" y="105" pointer-events="none">Baño Acc.</text>
+
+                <path id="linea-recorrido" 
+                      fill="none" stroke="#ff0000" stroke-width="4" stroke-dasharray="8" 
+                      d="" style="display: none;" />
+            </svg>
+            
+            <button id="btn-limpiar" class="btn-secundario">Limpiar Selección</button>
+        </section>
+
+        <aside class="panel-info" aria-live="polite" id="ficha-descriptiva" tabindex="-1">
+            <h2>Información del sector</h2>
+            <p>Hacé clic en cualquier espacio del mapa para comenzar.</p>
+        </aside>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
