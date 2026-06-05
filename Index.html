@@ -3,46 +3,170 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mapa Accesible - CFP N.o 7</title>
+    <title>Mapa interactivo</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Plano Interactivo CFP N.o 7</h1>
-        <p><strong>Instrucciones:</strong> Seleccioná un espacio para ver su información. Seleccioná un segundo espacio para trazar el recorrido entre ambos.</p>
+
+    <header class="top-nav">
+        <div class="logo">
+            <h2>CFP N°7</h2>
+            <p>Mapa interactivo del edificio</p>
+        </div>
+        <nav class="nav-links">
+            <a href="/Index.html" class="active">Mapa</a>
+            <a href="/buscar.html">Buscar</a>
+            <a href="/rutas.html">Rutas</a>
+            <a href="/reportes.html">Reportes</a>
+            <a href="/info.html">Info</a>
+        </nav>
+        <div class="nav-actions">
+            <button class="btn-outline">Contraste</button>
+            <button class="accesible">Accesible</button>
+        </div>
     </header>
 
-    <main class="contenedor-principal">
-        <section class="seccion-mapa" aria-labelledby="titulo-mapa">
-            <h2 id="titulo-mapa" class="sr-only">Plano del edificio</h2>
-            
-            <svg viewBox="0 0 500 300" aria-label="Mapa interactivo del CFP 7" role="application">
-                <rect id="aula-1" class="espacio-interactivo" 
-                      x="50" y="50" width="150" height="100" 
-                      role="button" tabindex="0" aria-pressed="false"
-                      aria-label="Aula 1: Taller de Informática" />
-                <text x="75" y="105" pointer-events="none">Aula 1</text>
+    <div class="app-container">
+        <aside class="sidebar">
+            <div class="search-bar">
+                <input type="text" placeholder="Buscar espacio o aula">
+            </div>
 
-                <rect id="bano-acc" class="espacio-interactivo" 
-                      x="300" y="50" width="100" height="100" 
-                      role="button" tabindex="0" aria-pressed="false"
-                      aria-label="Baño Accesible Universal" />
-                <text x="310" y="105" pointer-events="none">Baño Acc.</text>
+            <section class="sidebar-section">
+                <h3>ACCESOS RÁPIDOS</h3>
+                <div class="sidebar-card">
+                    <div class="icon aulas"></div>
+                    <div>
+                        <h4>Aulas</h4>
+                        <p>101 102 103 mas</p>
+                    </div>
+                </div>
+                <div class="sidebar-card">
+                    <div class="icon secretaria"></div>
+                    <div>
+                        <h4>Secretaría</h4>
+                        <p>Trámites 8-17</p>
+                    </div>
+                </div>
+                <div class="sidebar-card">
+                    <div class="icon baños"></div>
+                    <div>
+                        <h4>Baños accesibles</h4>
+                        <p>Rampa Planta baja</p>
+                    </div>
+                </div>
+                <div class="sidebar-card">
+                    <div class="icon light-red"></div>
+                    <div>
+                        <h4>Reportar barrera</h4>
+                        <p>Incidencias Obstáculos</p>
+                    </div>
+                </div>
+            </section>
 
-                <path id="linea-recorrido" 
-                      fill="none" stroke="#ff0000" stroke-width="4" stroke-dasharray="8" 
-                      d="" style="display: none;" />
-            </svg>
-            
-            <button id="btn-limpiar" class="btn-secundario">Limpiar Selección</button>
-        </section>
-
-        <aside class="panel-info" aria-live="polite" id="ficha-descriptiva" tabindex="-1">
-            <h2>Información del sector</h2>
-            <p>Hacé clic en cualquier espacio del mapa para comenzar.</p>
+            <section class="sidebar-section">
+                <h3>INFORMACIÓN GENERAL</h3>
+                <div class="info-row">
+                    <span>Horario hoy</span>
+                    <span>8:00-21:00 h</span>
+                </div>
+                <div class="info-row">
+                    <span>Planta actual</span>
+                    <span>Planta baja</span>
+                </div>
+                <div class="info-card escaleras">
+                    <h4>Rutas sin escaleras</h4>
+                </div>
+                <div class="info-card outline">
+                    <h4>Código QR de orientación</h4>
+                </div>
+            </section>
         </aside>
-    </main>
 
-    <script src="script.js"></script>
+        <main class="main-content">
+            <section class="hero-banner">
+                <p>Bienvenido/a al</p>
+                <h1>Centro de Formación Profesional N°7</h1>
+                <p>Navega el edificio con rutas accesibles, fichas de cada espacio y orientación visual paso a paso.</p>
+                <p class="small-text">Planta baja 3 aulas Secretaria Dirección Sala de profesores Baños accesibles</p>
+                <div class="hero-actions">
+                    <button class="secretaria">Ver mapa completo →</button>
+                    <button class="aulas">Ruta accesible</button>
+                </div>
+            </section>
+
+            <h3 class="section-title">EXPLORAR ESPACIOS</h3>
+
+            <div class="spaces-grid">
+                <article class="space-card">
+                    <div class="card-img-placeholder">[Foto Aula 101]</div>
+                    <h4>Aula 101</h4>
+                    <p>Planta baja 30 personas</p>
+                </article>
+                <article class="space-card">
+                    <div class="card-img-placeholder">[Foto Aula 102]</div>
+                    <h4>Aula 102</h4>
+                    <p>Planta baja 30 personas</p>
+                </article>
+                <article class="space-card">
+                    <div class="card-img-placeholder">[Foto Aula 103]</div>
+                    <h4>Aula 103</h4>
+                    <p>Planta baja 35 personas</p>
+                </article>
+                <article class="space-card">
+                    <div class="card-img-placeholder">[Foto Secretaria]</div>
+                    <h4>Secretaría</h4>
+                    <p>Planta baja 8-17 n</p>
+                </article>
+
+                <article class="action-card">
+                    <div class="card-header">
+                        <div class="icon secretaria"></div>
+                        <div>
+                            <h4>Dirección</h4>
+                            <p>Gestión institucional</p>
+                        </div>
+                    </div>
+                    <button class="btn-dark">Ver ruta →</button>
+                </article>
+                <article class="action-card">
+                    <div class="card-header">
+                        <div class="icon barrera"></div>
+                        <div>
+                            <h4>Sala de profesores</h4>
+                            <p>Sala personal docente</p>
+                        </div>
+                    </div>
+                    <button class="btn-dark">Ver ruta →</button>
+                </article>
+                <article class="action-card">
+                    <div class="card-header">
+                        <div class="icon baños"></div>
+                        <div>
+                            <h4>Baño accesible</h4>
+                            <p>Baranda Espejo rebajado</p>
+                        </div>
+                    </div>
+                    <button class="btn-dark">Ver ruta →</button>
+                </article>
+                <article class="action-card report-card">
+                    <div class="card-header">
+                        <div class="icon light-red"></div>
+                        <div>
+                            <h4>Reportar barrera</h4>
+                            <p>Incidencias de accesibilidad</p>
+                        </div>
+                    </div>
+                    <button class="accesible">Ir al formulario →</button>
+                </article>
+            </div>
+        </main>
+    </div>
+
+    <footer>
+        <p>
+            Equipo 15 InnovaLab
+        </p>
+    </footer>
 </body>
 </html>
