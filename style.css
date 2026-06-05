@@ -71,7 +71,7 @@ body {
     color: white;
 }
 
-.btn-outline {
+.contraste {
     background: transparent;
     border: 1px solid white !important;
     margin-right: 10px;
@@ -98,7 +98,7 @@ body {
     gap: 25px;
 }
 
-.search-bar input {
+.buscador input {
     width: 100%;
     padding: 12px;
     border-radius: 8px;
@@ -157,7 +157,7 @@ body {
     font-size: 0.9rem;
 }
 
-.info-card.outline {
+.info-card.contraste {
     background: white;
     border: 1px solid var(--border-color);
 }
@@ -201,7 +201,7 @@ body {
 .aulas { background-color: var(--aulas); }
 
 /* GRILLA DE ESPACIOS */
-.section-title {
+.section-titulo {
     font-size: 0.85rem;
     color: #888888;
     letter-spacing: 1px;
